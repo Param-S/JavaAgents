@@ -18,6 +18,7 @@ class Agent {
     public static void premain(String args, Instrumentation instrumentation) {
         parseCommandLineArgs(args.trim());        
 
+        /* testing travis ci */
         MemoryMXBean mbean = ManagementFactory.getMemoryMXBean();
         NotificationEmitter emitter = (NotificationEmitter) mbean;
         MyListener listener = new MyListener();
