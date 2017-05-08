@@ -12,7 +12,7 @@ import java.lang.management.MemoryType;
 class Agent {
     private static boolean init;
     private static int threshold;
-    public static String [] dumpOptions;
+    public static String [] dumpOpts;
 
     // Agent command line args: -javaagent:gcDumpAgent.jar="-t 80 -d java,system"
     public static void premain(String args, Instrumentation instrumentation) {
@@ -36,7 +36,7 @@ class Agent {
                         break;
                     case 'd':
                         String dumpOption = token.substring(2, token.length());
-                        dumpOptions = dumpOption.split(",");
+                        dumpOpts = dumpOption.split(",");
                         break;
                     default:
                         // TODO: Nothing to do here. Handle error if required
